@@ -35,9 +35,9 @@ button{font:inherit}
 .strong{font-weight:800}
 .lead{font-size:17px;line-height:1.6;color:rgba(241,240,236,.8);text-wrap:pretty}
 
-.display-xl{font:400 clamp(56px,8vw,96px)/.9 var(--display);text-transform:uppercase}
-.display-l{font:400 clamp(44px,6vw,72px)/.92 var(--display);text-transform:uppercase}
-.display-m{font:400 clamp(32px,3.4vw,40px)/.95 var(--display);text-transform:uppercase}
+.display-xl{font:400 clamp(56px,8vw,96px)/1.1 var(--display);text-transform:uppercase}
+.display-l{font:400 clamp(44px,6vw,72px)/1.15 var(--display);text-transform:uppercase}
+.display-m{font:400 clamp(32px,3.4vw,40px)/1.15 var(--display);text-transform:uppercase}
 
 /* tlačítka */
 .btn{
@@ -67,7 +67,7 @@ button{font:inherit}
 
 /* hero */
 .hero{position:relative;height:min(640px,86vh);min-height:520px;overflow:hidden}
-.hero-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.55}
+.hero-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.7}
 .hero-shade{position:absolute;inset:0;background:linear-gradient(rgba(14,14,15,.2) 0%,rgba(14,14,15,.95) 92%)}
 .hero-content{position:absolute;left:0;right:0;bottom:48px;display:flex;flex-direction:column;gap:20px}
 .hero h1{font:400 clamp(84px,15.6vw,200px)/.85 var(--display);text-transform:uppercase;letter-spacing:-.01em}
@@ -87,6 +87,12 @@ button{font:inherit}
 .news-item{display:flex;gap:18px;align-items:baseline;font-size:15px;line-height:1.5}
 .news-item .mono{color:var(--lime);flex:none}
 .news-item p{color:rgba(241,240,236,.85)}
+
+/* fotka pod aktualitami */
+.photo-band{padding:48px 0 0}
+.photo-band-inner{position:relative}
+.photo-band-inner img{display:block;width:100%;aspect-ratio:21/9;object-fit:cover;object-position:50% 40%;border:1px solid var(--line)}
+.photo-band-inner figcaption{position:absolute;left:calc(var(--pad) + 16px);bottom:16px;background:var(--bg);color:var(--lime);padding:6px 10px}
 
 /* sekce */
 .section{padding:80px 0 72px}
@@ -234,6 +240,8 @@ button{font:inherit}
   .gallery-item img{height:160px}
   .signup-form{padding:20px}
   .news-item{flex-direction:column;gap:4px}
+  .photo-band{padding-top:32px}
+  .photo-band-inner img{aspect-ratio:16/10}
   .footer-inner{flex-direction:column;align-items:flex-start}
   .lb-prev,.lb-next{top:auto;bottom:20px;transform:none}
 }

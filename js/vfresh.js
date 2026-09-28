@@ -1,6 +1,6 @@
 /*
   VFRESH DC one-page: menu, aktuality a galerie z VTStore, lightbox,
-  tlačítka „Zkušební lekce" u crew a odeslání přihlášky.
+  tlačítka „Přihlásit se" u crew a odeslání přihlášky.
   Rozvrh, styly, benefity a texty jsou přímo v index.html.
 */
 (() => {
