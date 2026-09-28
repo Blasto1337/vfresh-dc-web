@@ -181,6 +181,7 @@
         group: "group_key", name: "name", age: "age_label", location: "location_label",
         description: "description", icon: "icon", color: "color", schedule: "schedule",
         photo: "photo_url", detailHref: "detail_href", featured: "featured", site: "site",
+        when: "when_label", photoHint: "photo_hint", hero: "hero", heroLead: "hero_lead", heroOrder: "hero_order",
       },
     },
     akce: {
@@ -189,11 +190,12 @@
         tag: "tag", color: "color", category: "category", title: "title", date: "date_label",
         location: "place_text", description: "description", bullets: "bullets",
         photo: "photo_url", detailHref: "detail_href", featured: "featured", site: "site",
+        age: "age_label", photoHint: "photo_hint", hero: "hero", heroLead: "hero_lead", heroOrder: "hero_order",
       },
     },
     aktuality: {
       table: "vik_news",
-      fields: { date: "date_label", text: "body", photo: "photo_url", site: "site" },
+      fields: { date: "date_label", title: "title", text: "body", photo: "photo_url", site: "site" },
     },
     galerie: {
       table: "vik_gallery",

@@ -13,6 +13,7 @@ window.VT_SEED = {
   krouzky: [
     {
       id: "vfresh-dc", seed: true, site: "both", group: "vfresh", featured: true,
+      when: "Út–Pá odpoledne",
       icon: "dance", color: "purple",
       name: "VFRESH DC",
       age: "3–20 let", location: "CUT Tábor, Vančurova 2904",
@@ -21,6 +22,7 @@ window.VT_SEED = {
     },
     {
       id: "zumba", seed: true, site: "viktoria", group: "volnocas", featured: true,
+      when: "Po 17:45 · Út 19:00 · St 8:15", photoHint: "skupina dospělých při Zumbě v tanečním sále",
       icon: "pulse", color: "pink",
       name: "Zumba & Dance",
       age: "dospělí", location: "Tábor (CUT) & Planá n. L.",
@@ -29,6 +31,7 @@ window.VT_SEED = {
     },
     {
       id: "street-deti", seed: true, site: "both", group: "vfresh", featured: false,
+      when: "Út 15:30–17:00", photoHint: "děti při street dance v tělocvičně ZŠ Helsinská",
       icon: "dance", color: "purple",
       name: "Rekreační STREET DANCE děti",
       age: "7–14 let", location: "ZŠ Helsinská, Tábor",
@@ -37,6 +40,8 @@ window.VT_SEED = {
     },
     {
       id: "gymnastika", seed: true, site: "viktoria", group: "volnocas", featured: true,
+      when: "St 15:30–17:30", photoHint: "děti při sestavě na kladině nebo akrobacii v tělocvičně Gymnázia",
+      hero: true, heroOrder: 40, heroLead: "Od prvních kotoulů po závodní medaile. Trénujeme obratnost, sílu i odvahu v tělocvičně Gymnázia Tábor.",
       icon: "medal", color: "teal",
       name: "Sportovní gymnastika",
       age: "5–15 let", location: "Gymnázium Tábor",
@@ -45,6 +50,7 @@ window.VT_SEED = {
     },
     {
       id: "telovychova", seed: true, site: "viktoria", group: "volnocas", featured: true,
+      when: "Čt 15:30 · St 16:00 a 17:00", photoHint: "děti při pohybových hrách s míčem nebo na překážkové dráze",
       icon: "kids-sport", color: "yellow",
       name: "Sportuj s VIKTORKOU",
       age: "3–12 let", location: "CUT Tábor & ZŠ Helsinská",
@@ -53,6 +59,8 @@ window.VT_SEED = {
     },
     {
       id: "dramaticky-klub", seed: true, site: "viktoria", group: "volnocas", featured: true,
+      when: "St 14:00 a 15:00", photoHint: "děti hrají divadlo v kostýmech, scéna z Dramáčku",
+      hero: true, heroOrder: 30, heroLead: "Dramáček pro 3–6 let a Dramalab pro 7–12 let. Divadelní hra, správná mluva a zdravé sebevědomí.",
       icon: "theater", color: "blue",
       name: "Dramatický klub",
       age: "3–12 let", location: "CUT Tábor",
@@ -61,6 +69,8 @@ window.VT_SEED = {
     },
     {
       id: "viktorianek", seed: true, site: "viktoria", group: "volnocas", featured: true,
+      when: "Út a Čt 9:30", photoHint: "maminka s batoletem na žíněnce, společné cvičení",
+      hero: true, heroOrder: 10, heroLead: "Společné dopolední cvičení s maminkou nebo tátou. Říkanky, překážkové dráhy a první kotrmelce, potom herna Safari.",
       icon: "toddler", color: "red",
       name: "Viktoriánek",
       age: "1,5–3 roky", location: "CUT Tábor",
@@ -72,6 +82,8 @@ window.VT_SEED = {
   akce: [
     {
       id: "sportuj-v-parku", seed: true, site: "viktoria", featured: true,
+      age: "děti 3–12 let", photoHint: "děti sportují venku v parku",
+      hero: true, heroOrder: 20, heroLead: "Venkovní sportovní odpoledne pro děti: hry, pohyb a ochutnávka kroužku Sportuj s VIKTORKOU pod širým nebem.",
       tag: "NÁBOR", color: "red", category: "nabor",
       title: "Sportuj v parku s VIKTORKOU",
       date: "16. 9. 2026", location: "Tábor",
@@ -87,6 +99,8 @@ window.VT_SEED = {
     },
     {
       id: "silvestrovsky-beh", seed: true, site: "viktoria", featured: true,
+      age: "děti i dospělí", photoHint: "běžci na startu v zimním Táboře",
+      hero: true, heroOrder: 50, heroLead: "Tradiční sportovní rozloučení se starým rokem, pro děti i dospělé, bez ohledu na výkonnost.",
       tag: "ZÁVOD", color: "teal", category: "zavody",
       title: "Silvestrovský běh",
       date: "30. 12. 2026", location: "Tábor",
@@ -139,18 +153,21 @@ window.VT_SEED = {
   aktuality: [
     {
       id: "posledni-mista", seed: true, site: "vfresh",
+      title: "Poslední volná místa ve FRESHÍKU a MINI BEAT",
       date: "září 2026",
       text: "Poslední volná místa: Taneční školička FRESHÍK 3–4 roky (st 16:00), 5 míst, VFRESH MINI BEAT 5–8 let (út 16:30), 7 míst. Přihlášky: 607 825 318 nebo lena.cimpova@seznam.cz.",
       photo: null,
     },
     {
       id: "zkusebni-lekce", seed: true, site: "both",
+      title: "Zkušební lekce zdarma celé září",
       date: "do 30. 9. 2026",
       text: "Zkušební lekce zdarma ve všech kroužcích celé září. Nestihli jste termín? Domluvte si svoji 1 lekci zdarma do konce září.",
       photo: null,
     },
     {
       id: "zumba-tabor", seed: true, site: "viktoria",
+      title: "Nový podzimní blok Zumba & Dance",
       date: "od 17. 9. 2026",
       text: "Nový podzimní blok Zumba & Dance v Táboře (CUT): úterý 19:00 a středa 8:15 s hlídáním dětí v ceně. Ukázková lekce zdarma 9. 9. v 18:00.",
       photo: null,
