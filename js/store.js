@@ -18,6 +18,8 @@
   both). Veřejná stránka načítá jen svůj web + both. Který web to je, určí
   (v tomto pořadí) window.VT_SITE, atribut <html data-site="...">, nebo doména
   (obsahuje "vfresh" = vfresh), jinak viktoria. Admin načítá obsah obou webů.
+  Kurzy VFRESH DC mají site = both: zobrazí se i v nabídce a rozvrhu Viktorie
+  (rozcestník), ale jejich karty vedou na web VFRESH (VTStore.hrefFor).
 */
 (() => {
   "use strict";
@@ -36,6 +38,27 @@
     if (SITES.includes(explicit)) return explicit;
     return /vfresh/i.test(location.hostname) ? "vfresh" : "viktoria";
   })();
+  // Veřejné adresy obou webů. Kroužek, jehož domovský web je jiný než ten
+  // aktuální (např. VFRESH DC na viktoria-tabor.cz), odkazuje na detail tam.
+  const SITE_URLS = {
+    viktoria: "https://www.viktoria-tabor.cz/",
+    vfresh: "https://www.vfreshdc.cz/",
+  };
+  // Domovský web položky: taneční skupina VFRESH patří na web vfresh, zbytek na viktoria.
+  function homeSite(item) {
+    if (item && (item.group === "vfresh" || item.program === "vfresh")) return "vfresh";
+    if (item && SITES.includes(item.site)) return item.site;
+    return "viktoria";
+  }
+  // Odkaz na detail: relativní na vlastním webu, absolutní na druhý web.
+  function hrefFor(item, fallback) {
+    const href = (item && item.detailHref) || fallback || "";
+    if (!href || /^[a-z]+:/i.test(href)) return href;
+    const home = homeSite(item);
+    return home === SITE ? href : SITE_URLS[home] + href.replace(/^\//, "");
+  }
+  function isExternal(item) { return homeSite(item) !== SITE; }
+
   // Položka patří na tento web? (řádek bez site = viktoria, jako výchozí hodnota v DB)
   function onThisSite(item) {
     const s = (item && item.site) || "viktoria";
@@ -374,6 +397,10 @@
   store.site = SITE;        // "viktoria" | "vfresh"
   store.sites = SITES.slice();
   store.onThisSite = onThisSite;
+  store.siteUrls = { ...SITE_URLS };
+  store.homeSite = homeSite;
+  store.hrefFor = hrefFor;
+  store.isExternal = isExternal;
   store.uploadPhoto = uploadPhoto;
   store.deletePhoto = deletePhoto;
   store.loadAdmin = loadAdmin;

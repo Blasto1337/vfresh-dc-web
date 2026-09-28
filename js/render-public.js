@@ -21,6 +21,12 @@
     }[c]));
   }
 
+  // Odkazy na druhý web (např. „Web VFRESH DC ↗“) berou adresu z VTStore.siteUrls.
+  document.querySelectorAll("[data-vt-site-link]").forEach((link) => {
+    const url = VTStore.siteUrls && VTStore.siteUrls[link.dataset.vtSiteLink];
+    if (url) link.href = url;
+  });
+
   function render() {
     // --- Aktuality -----------------------------------------------------
     // Nejnovější aktualita je velká karta s výzvou, ostatní jsou kompaktní řádky.
@@ -170,12 +176,14 @@
 
     // --- Kroužky (courses) ------------------------------------------------
     function krouzekHref(item) {
-      return item.detailHref || `kurz-detail.html?id=${encodeURIComponent(item.id)}`;
+      // Kroužek z druhého webu (VFRESH DC na hlavním webu) vede na jeho vlastní web.
+      return VTStore.hrefFor(item, `kurz-detail.html?id=${encodeURIComponent(item.id)}`);
     }
 
     function courseCardHtml(item) {
       const iconSvg = window.vtIconSvg ? window.vtIconSvg(item.icon) : "";
       const hasPhoto = !!item.photo;
+      const external = VTStore.isExternal(item);
       const photoHtml = hasPhoto
         ? `<div class="course-photo"><img src="${escapeHtml(item.photo)}" alt="${escapeHtml(item.name)}" loading="lazy"></div>`
         : "";
@@ -189,7 +197,9 @@
           </div>
           <div class="course-foot">
             <span class="age-badge">${escapeHtml(item.age || "Novinka")}</span>
-            <span class="course-arrow" aria-hidden="true">→</span>
+            ${external
+              ? '<span class="course-arrow course-arrow-ext">web VFRESH DC ↗</span>'
+              : '<span class="course-arrow" aria-hidden="true">→</span>'}
           </div>
         </div>
       `;
