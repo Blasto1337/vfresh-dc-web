@@ -51,11 +51,14 @@
     return "viktoria";
   }
   // Odkaz na detail: relativní na vlastním webu, absolutní na druhý web.
+  // Web VFRESH je one-page, takže jeho kurzy vedou na sekci #rozvrh.
   function hrefFor(item, fallback) {
     const href = (item && item.detailHref) || fallback || "";
-    if (!href || /^[a-z]+:/i.test(href)) return href;
+    if (/^[a-z]+:/i.test(href)) return href;
     const home = homeSite(item);
-    return home === SITE ? href : SITE_URLS[home] + href.replace(/^\//, "");
+    if (home === SITE) return href;
+    if (home === "vfresh") return SITE_URLS.vfresh + "#rozvrh";
+    return SITE_URLS[home] + href.replace(/^\//, "");
   }
   function isExternal(item) { return homeSite(item) !== SITE; }
 

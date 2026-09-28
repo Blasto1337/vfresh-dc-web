@@ -3,37 +3,31 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>VFRESH DC | taneční centrum & SK Viktoria Tábor</title>
-<meta name="description" content="VFRESH DC: street dance pro děti i dospělé od 3 let v Táboře. Plus sportovní gymnastika, Sportuj s VIKTORKOU, dramatický klub a Viktoriánek. Nová sezóna 2026/27, nábor právě probíhá.">
+<title>VFRESH DC | street dance Tábor · nábor 2026/27</title>
+<meta name="description" content="VFRESH DC, Viktoria Fresh Dance Center v Táboře: street dance pro děti i dospělé od 3 let. Rekreační kurzy i soutěžní STREET DANCE CREW, Hip Hop, House, Dancehall, Locking. Zkušební lekce zdarma.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Nunito:ital,wght@0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css">
-<link href="https://fonts.googleapis.com/css2?family=Anton&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/night-street.css">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/vfresh.css">
 </head>
 <body>
 
-<header class="site-header">
-  <div class="wrap header-inner">
+<header class="nav">
+  <div class="wrap nav-inner">
     <a class="brand" href="#top">
-      <img class="brand-badge" src="assets/logo-freshdance.png" alt="Fresh Dance">
+      <img src="assets/logo-freshdance.png" alt="" class="brand-logo">
       <span class="brand-name">VFRESH DC</span>
     </a>
-
-    <nav class="main-nav" id="main-nav">
-      <a href="krouzky.html">Aktivity</a>
-      <a href="akce.html">Akce</a>
+    <nav class="nav-links" id="main-nav" aria-label="Hlavní menu">
       <a href="#rozvrh">Rozvrh</a>
-      <a href="gallery.html">Galerie</a>
-      <a href="#aktuality">Aktuality</a>
+      <a href="#styly">Styly</a>
+      <a href="#proc">Proč my</a>
+      <a href="#benefity">Benefity</a>
+      <a href="#galerie">Galerie</a>
       <a href="#kontakt">Kontakt</a>
-      <a href="tel:+420607825318" aria-label="Zavolat">📞 Zavolat</a>
-      <a href="mailto:lena.cimpova@seznam.cz" aria-label="Napsat e-mail">✉ E-mail</a>
-      <a class="btn btn-cta nav-cta" href="#kontakt">Přihláška <span aria-hidden="true">✦</span></a>
+      <a class="btn btn-lime nav-cta" href="#prihlaska">Přihláška ✦</a>
     </nav>
-
-    <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="main-nav" aria-label="Otevřít menu">
+    <button class="nav-toggle" id="nav-toggle" type="button" aria-expanded="false" aria-controls="main-nav" aria-label="Otevřít menu">
       <span></span><span></span><span></span>
     </button>
   </div>
@@ -42,217 +36,231 @@
 <main id="top">
 
   <section class="hero">
-    <div class="wrap hero-inner">
-      <span class="hero-eyebrow">NOVÁ SEZÓNA 2026/27 · NÁBOR PRÁVĚ PROBÍHÁ</span>
-      <h1>VFRESH<br><span>STREET DANCE</span></h1>
-      <p class="hero-lead">Tvoje crew. Tvoje cesta. Tvůj vibe. Street dance a taneční komunita pro děti i dospělé od 3 let, od první školičky po soutěžní crew. Přijď na zkušební lekci zdarma.</p>
-      <a class="btn btn-hero" href="#kontakt">Chci na zkušební lekci</a>
-    </div>
-  </section>
-
-
-  <section class="about" id="o-nas">
-    <div class="wrap about-grid">
-      <div class="about-photo">
-        <img src="assets/hero/kdo-jsme-tanecnice.jpg" alt="Tým VFRESH DC a SK Viktoria Tábor" loading="lazy">
-      </div>
-      <div class="about-text">
-        <h2>Kdo jsme</h2>
-        <p>Jsme SK Viktoria Tábor, klub s tradicí od roku 1990, jehož srdcem je dnes VFRESH DC. Tanec je pro nás víc než kroky do hudby, je to naše společná řeč a rodina, která drží pohromadě. V novém tanečním centru v srdci Tábora najdete i gymnastiku, divadlo a pohyb pro nejmenší se zkušenými lektory a prostorem růst od prvních krůčků po soutěžní pódia.</p>
-      </div>
-    </div>
-  </section>
-  <section class="courses" id="tanecni-kurzy">
-    <div class="wrap">
-      <div class="section-head">
-        <h2>Taneční kurzy VFRESH DC</h2>
-        <a class="link-more" href="krouzky.html#tanecni-kurzy">Všechny aktivity →</a>
-      </div>
-      <div class="courses-grid" id="courses-grid-preview-vfresh"></div>
-    </div>
-  </section>
-  <section class="courses" id="volnocasove-aktivity">
-    <div class="wrap">
-      <div class="section-head">
-        <h2>Volnočasové aktivity</h2>
-        <a class="link-more" href="krouzky.html#volnocasove-aktivity">Všechny aktivity →</a>
-      </div>
-      <div class="courses-grid" id="courses-grid-preview-volnocas"></div>
-    </div>
-  </section>
-  <section class="events" id="akce">
-    <div class="wrap">
-      <div class="section-head">
-        <h2>Akce</h2>
-        <a class="link-more" href="akce.html">Všechny akce →</a>
-      </div>
-      <div class="events-grid" id="events-grid-preview"></div>
-    </div>
-  </section>
-
-  <section class="timetable" id="rozvrh">
-    <div class="wrap">
-      <p class="kicker">Rozvrh 2026/27</p>
-      <h2>Kdy trénujeme</h2>
-      <div class="tt-filters" role="group" aria-label="Filtr rozvrhu">
-        <button type="button" class="tt-filter active" data-tt-filter="all">Vše</button>
-        <button type="button" class="tt-filter tt-vfresh" data-tt-filter="vfresh"><i aria-hidden="true"></i>VFRESH DC</button>
-        <button type="button" class="tt-filter tt-zumba" data-tt-filter="zumba"><i aria-hidden="true"></i>Zumba &amp; Dance</button>
-        <button type="button" class="tt-filter tt-volnocas" data-tt-filter="volnocas"><i aria-hidden="true"></i>Volnočasové aktivity</button>
-      </div>
-      <div class="tt-week" id="tt-week"></div>
-      <p class="tt-foot">Pokud není uvedeno jinak, trénujeme v Centru Univerzita Tábor, Vančurova 2904. Zkušební lekce zdarma celé září. <a href="#kontakt">Napište nám →</a></p>
-    </div>
-  </section>
-
-  <section class="news-section" id="aktuality">
-    <div class="wrap">
-      <div class="section-head">
-        <h2>Aktuality</h2>
-      </div>
-      <div class="news-grid" id="alerts-list"></div>
-    </div>
-  </section>
-
-  <section class="benefits" id="benefity">
-    <div class="wrap">
-      <p class="kicker">Pro členy</p>
-      <div class="section-head">
-        <h2>Vyplatí se být s námi</h2>
-      </div>
-      <p class="detail-lead" style="margin-top:0;color:rgba(255,255,255,.78)">Vítej v komunitě VFRESH DC &amp; Viktoria z.s. Členství se vyplatí celé rodině.</p>
-      <div class="benefit-groups">
-        <div class="benefit-group benefit-group-purple">
-          <h3>Tanečníci VFRESH DC</h3>
-          <div class="benefit-chips">
-          <div class="benefit-chip">
-            <span class="benefit-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>
-            <span class="benefit-value">20 %</span>
-            <span class="benefit-label">Sourozenecká sleva</span>
-          </div>
-          <div class="benefit-chip">
-            <span class="benefit-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83Z"/><path d="m6.08 9.5-3.5 1.6a1 1 0 0 0 0 1.81l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9a1 1 0 0 0 0-1.83l-3.5-1.59"/><path d="m6.08 14.5-3.5 1.6a1 1 0 0 0 0 1.81l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9a1 1 0 0 0 0-1.83l-3.5-1.59"/></svg></span>
-            <span class="benefit-value">20 %</span>
-            <span class="benefit-label">Sleva na druhý kurz</span>
-          </div>
-          <div class="benefit-chip">
-            <span class="benefit-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/></svg></span>
-            <span class="benefit-value">5 %</span>
-            <span class="benefit-label">Věrnostní sleva</span>
-          </div>
-          <div class="benefit-chip">
-            <span class="benefit-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="18" height="10" rx="2"/><path d="M3 12h18"/><path d="M7 6V4"/><path d="M17 6V4"/><circle cx="7.5" cy="18" r="1.5"/><circle cx="16.5" cy="18" r="1.5"/></svg></span>
-            <span class="benefit-value">Příspěvek</span>
-            <span class="benefit-label">Doprava na soutěže</span>
-          </div>
-          <div class="benefit-chip">
-            <span class="benefit-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z"/><path d="m15 5 4 4"/></svg></span>
-            <span class="benefit-value">Sleva</span>
-            <span class="benefit-label">Workshopy</span>
-          </div>
-          <div class="benefit-chip">
-            <span class="benefit-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="8" width="18" height="4" rx="1"/><path d="M12 8v13"/><path d="M19 12v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-7"/><path d="M7.5 8a2.5 2.5 0 0 1 0-5C11 3 12 8 12 8"/><path d="M16.5 8a2.5 2.5 0 0 0 0-5C13 3 12 8 12 8"/></svg></span>
-            <span class="benefit-value">Sleva</span>
-            <span class="benefit-label">Herna Safari a restaurace</span>
-          </div>
-          </div>
-        </div>
-        <div class="benefit-group benefit-group-teal">
-          <h3>Členové Viktoria z.s.</h3>
-          <div class="benefit-chips">
-          <div class="benefit-chip">
-            <span class="benefit-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>
-            <span class="benefit-value">20 %</span>
-            <span class="benefit-label">Sourozenecká sleva</span>
-          </div>
-          <div class="benefit-chip">
-            <span class="benefit-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83Z"/><path d="m6.08 9.5-3.5 1.6a1 1 0 0 0 0 1.81l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9a1 1 0 0 0 0-1.83l-3.5-1.59"/><path d="m6.08 14.5-3.5 1.6a1 1 0 0 0 0 1.81l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9a1 1 0 0 0 0-1.83l-3.5-1.59"/></svg></span>
-            <span class="benefit-value">20 %</span>
-            <span class="benefit-label">Sleva na druhý kurz</span>
-          </div>
-          <div class="benefit-chip">
-            <span class="benefit-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg></span>
-            <span class="benefit-value">20 %</span>
-            <span class="benefit-label">Lekce Zumba &amp; Dance</span>
-          </div>
-          <div class="benefit-chip">
-            <span class="benefit-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"/><path d="M20 3v4"/><path d="M22 5h-4"/><path d="M4 17v2"/><path d="M5 18H3"/></svg></span>
-            <span class="benefit-value">20 %</span>
-            <span class="benefit-label">Masáže</span>
-          </div>
-          <div class="benefit-chip">
-            <span class="benefit-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 21 14 3"/><path d="M20.5 21 10 3"/><path d="M15.5 21 12 15l-3.5 6"/><path d="M2 21h20"/></svg></span>
-            <span class="benefit-value">15 %</span>
-            <span class="benefit-label">Příměstské pobyty a akce</span>
-          </div>
-          <div class="benefit-chip">
-            <span class="benefit-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="8" width="18" height="4" rx="1"/><path d="M12 8v13"/><path d="M19 12v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-7"/><path d="M7.5 8a2.5 2.5 0 0 1 0-5C11 3 12 8 12 8"/><path d="M16.5 8a2.5 2.5 0 0 0 0-5C13 3 12 8 12 8"/></svg></span>
-            <span class="benefit-value">Sleva</span>
-            <span class="benefit-label">Herna Safari a restaurace</span>
-          </div>
-          </div>
+    <img class="hero-photo" src="assets/gallery/soutez-1.jpg" alt="">
+    <div class="hero-shade" aria-hidden="true"></div>
+    <div class="wrap hero-content">
+      <span class="mono lime">// NÁBOR 2026/27 · 3–20 LET · VANČUROVA 2904, TÁBOR</span>
+      <h1>Tvoje crew<span class="lime">.</span></h1>
+      <div class="hero-row">
+        <p>Rekreační tanec pro radost a partu, nebo soutěžní STREET DANCE CREW s přípravou na závody. Vyber si podle věku.</p>
+        <div class="hero-actions">
+          <a class="btn btn-lime" href="#prihlaska">Zkušebka zdarma</a>
+          <a class="btn btn-ghost" href="tel:+420607825318">📞 Zavolat</a>
         </div>
       </div>
-      <p class="benefit-ribbon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="3" x2="21" y1="22" y2="22"/><line x1="6" x2="6" y1="18" y2="11"/><line x1="10" x2="10" y1="18" y2="11"/><line x1="14" x2="14" y1="18" y2="11"/><line x1="18" x2="18" y1="18" y2="11"/><polygon points="12 2 20 7 4 7"/></svg>Od září navíc lze čerpat příspěvek Jihočeského kraje „Pomáháme s kroužky pro jihočeské děti".</p>
     </div>
   </section>
-  <section class="contact" id="kontakt">
+
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track">
+      <span>Hip Hop ✦</span><span>House Dance ✦</span><span>Dancehall ✦</span><span>Locking ✦</span>
+      <span>Hip Hop ✦</span><span>House Dance ✦</span><span>Dancehall ✦</span><span>Locking ✦</span>
+      <span>Hip Hop ✦</span><span>House Dance ✦</span><span>Dancehall ✦</span><span>Locking ✦</span>
+      <span>Hip Hop ✦</span><span>House Dance ✦</span><span>Dancehall ✦</span><span>Locking ✦</span>
+    </div>
+  </div>
+
+  <!-- Aktuality z adminu (web vfresh), skryté když žádné nejsou -->
+  <section class="news" id="aktuality" hidden>
+    <div class="wrap news-list" id="news-list"></div>
+  </section>
+
+  <section class="section" id="rozvrh">
     <div class="wrap">
-      <p class="kicker">Máte dotaz?</p>
-      <h2>Ozvěte se nám</h2>
-      <div class="contact-grid">
-      <div class="contact-info">
-        <div class="contact-card">
-          <p>Máte dotaz ke kroužku, přihlášce nebo zkušebnímu tréninku? Ozveme se co nejdřív.</p>
-          <ul class="contact-details">
-            <li><span class="contact-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"/></svg></span><a href="tel:+420607825318">+420 607 825 318</a></li>
-            <li><span class="contact-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></span><a href="mailto:lena.cimpova@seznam.cz">lena.cimpova@seznam.cz</a></li>
-            <li><span class="contact-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg></span><span>VFRESH DC &amp; SK Viktoria z.s., Centrum Univerzita Tábor, Vančurova 2904 (přízemí, bývalý Party Room)</span></li>
-          </ul>
+      <div class="section-head">
+        <h2 class="display-xl">Rozvrh</h2>
+        <span class="muted">Soutěžní crew (DVK/JVK/A) mají navíc 1 h sportovní gymnastiky týdně.</span>
+      </div>
+      <div class="crew-grid">
+        <article class="crew">
+          <div class="crew-top"><span class="mono dim">01</span><span class="crew-tag">Rekreační</span></div>
+          <h3>Taneční školička FRESHÍK</h3>
+          <span class="crew-age">3–4 roky</span>
+          <div class="crew-info"><span>St 16:00–17:00</span><span>Zkušební: St 9. 9., St 23. 9.</span></div>
+          <button class="btn btn-outline crew-cta" type="button" data-crew="Taneční školička FRESHÍK (3–4 roky)">Zkušební lekce →</button>
+        </article>
+        <article class="crew">
+          <div class="crew-top"><span class="mono dim">02</span><span class="crew-tag">Rekreační</span></div>
+          <h3>VFresh Mini Beat</h3>
+          <span class="crew-age">5–8 let</span>
+          <div class="crew-info"><span>Út 16:30–17:30</span><span>Zkušební: Út 8. 9., Út 22. 9.</span><span>· předškolní</span></div>
+          <button class="btn btn-outline crew-cta" type="button" data-crew="VFresh Mini Beat (5–8 let)">Zkušební lekce →</button>
+        </article>
+        <article class="crew">
+          <div class="crew-top"><span class="mono dim">03</span><span class="crew-tag">Soutěžní</span></div>
+          <h3>DVK Street Dance Crew</h3>
+          <span class="crew-age">8–12 let</span>
+          <div class="crew-info"><span>Út 15:00–16:30 · Čt 16:30–18:00</span><span>Zkušební: Čt 10. 9., Čt 17. 9.</span></div>
+          <button class="btn btn-outline crew-cta" type="button" data-crew="DVK Street Dance Crew (8–12 let)">Zkušební lekce →</button>
+        </article>
+        <article class="crew">
+          <div class="crew-top"><span class="mono dim">04</span><span class="crew-tag">Soutěžní</span></div>
+          <h3>JVK Street Dance Crew</h3>
+          <span class="crew-age">12–15 let</span>
+          <div class="crew-info"><span>St 17:00–18:30 · Pá 15:00–16:30</span><span>Zkušební: St 23. 9.</span></div>
+          <button class="btn btn-outline crew-cta" type="button" data-crew="JVK Street Dance Crew (12–15 let)">Zkušební lekce →</button>
+        </article>
+        <article class="crew">
+          <div class="crew-top"><span class="mono dim">05</span><span class="crew-tag">Soutěžní</span></div>
+          <h3>A Fresh Crew</h3>
+          <span class="crew-age">14–20 let</span>
+          <div class="crew-info"><span>Út 17:30–19:00 · Čt 18:00–19:30</span><span>Zkušební: Út 22. 9.</span><span>· HVK, JVK pokročilí, nutná zkušenost</span></div>
+          <button class="btn btn-outline crew-cta" type="button" data-crew="A Fresh Crew (14–20 let)">Zkušební lekce →</button>
+        </article>
+        <article class="crew">
+          <div class="crew-top"><span class="mono dim">06</span><span class="crew-tag">Rekreační</span></div>
+          <h3>Rekreační STREET DANCE</h3>
+          <span class="crew-age">7–14 let</span>
+          <div class="crew-info"><span>Út 15:30–17:00</span><span>Zkušební po domluvě</span><span>· ZŠ Helsinská</span></div>
+          <button class="btn btn-outline crew-cta" type="button" data-crew="Rekreační STREET DANCE (7–14 let)">Zkušební lekce →</button>
+        </article>
+        <article class="crew">
+          <div class="crew-top"><span class="mono dim">07</span><span class="crew-tag">Rekreační</span></div>
+          <h3>Viktoria Fresh Mates</h3>
+          <span class="crew-age">dospělí 25+</span>
+          <div class="crew-info"><span>St 18:30–20:00</span><span>Zkušební po domluvě</span><span>· rodičovská crew, od října</span></div>
+          <button class="btn btn-outline crew-cta" type="button" data-crew="Viktoria Fresh Mates (dospělí 25+)">Zkušební lekce →</button>
+        </article>
+        <div class="crew crew-note">
+          <h3>Nestihneš termín?</h3>
+          <span class="muted">Domluv si svoji 1 lekci zdarma do konce září.</span>
+          <a class="lime strong" href="tel:+420607825318">+420 607 825 318</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="split" id="styly">
+    <div class="split-left">
+      <h2 class="display-l">Odstartuj svou<br><span class="lime">taneční cestu</span></h2>
+      <p class="lead">Hledáš místo, kde můžeš být sám sebou, makat na sobě a patřit do komunity, která tě podrží? VFRESH DC spouští nábor do všech tanečních CREW pro děti i dospělé od 3 let. Žijeme streetovou kulturou a předáme ti to nejlepší z ní.</p>
+    </div>
+    <div class="split-right">
+      <div class="style-row"><span class="style-name">Hip Hop</span><span class="muted">flow, groove a tvůj vlastní styl</span></div>
+      <div class="style-row"><span class="style-name">House Dance</span><span class="muted">rychlá práce nohou a klubová energie</span></div>
+      <div class="style-row"><span class="style-name">Dancehall</span><span class="muted">karibský vibe, rytmus a sebevědomí</span></div>
+      <div class="style-row"><span class="style-name">Locking</span><span class="muted">funk, energie a čistá radost z pohybu</span></div>
+      <span class="small dim">…a spoustu dalších stylů napříč celou STREET scénou.</span>
+    </div>
+  </section>
+
+  <section class="section section-line" id="proc">
+    <div class="wrap">
+      <h2 class="display-l">Proč VFRESH DC?</h2>
+      <p class="lead proc-lead">Protože nejsme jenom taneční klub. Jsme rodina. Tanec je pro nás víc než jen kroky do hudby, je to náš společný jazyk.</p>
+      <div class="why-grid">
+        <div class="why"><span class="why-num">01</span><b>Rosteme společně</b><span class="muted">na sále i mimo něj, inspirujeme se navzájem</span></div>
+        <div class="why"><span class="why-num">02</span><b>Tvoříme bez limitů</b><span class="muted">objevujeme nové styly a hledáme tvou jedinečnost</span></div>
+        <div class="why"><span class="why-num">03</span><b>Prožíváme to naplno</b><span class="muted">radost z úspěchů i sílu zvednout se, když se nedaří</span></div>
+        <div class="why"><span class="why-num">04</span><b>Pojí nás stejná krev</b><span class="muted">láska k tanci, respekt a přátelství, které vydrží</span></div>
+      </div>
+      <p class="slogan">🔥 Tvoje crew. Tvoje cesta. Tvůj vibe. Tvůj domov. 🔥</p>
+    </div>
+  </section>
+
+  <section class="section section-tight" id="benefity">
+    <div class="wrap benefit-grid">
+      <div class="benefit-lead">
+        <span class="display-m">Benefity pro tanečníky</span>
+        <span class="strong-sm">Vítej v komunitě VFRESH DC &amp; Viktoria z.s.</span>
+      </div>
+      <div class="benefit-card">
+        <span class="label">Slevy</span>
+        <div class="benefit-row"><span>Sourozenecká sleva</span><b>20 %</b></div>
+        <div class="benefit-row"><span>Sleva na druhý kurz</span><b>20 %</b></div>
+        <div class="benefit-row"><span>Věrnostní sleva</span><b>5 %</b></div>
+        <div class="benefit-row"><span>Workshopy pro členy crew</span><b>výhodněji</b></div>
+      </div>
+      <div class="benefit-card">
+        <span class="label">Navíc</span>
+        <div class="benefit-item"><b>Doprava na soutěže</b><span class="muted">příspěvek na autobus se spoluúčastí klubu</span></div>
+        <div class="benefit-item"><b>Herna Safari a restaurace</b><span class="muted">sleva na vstupné, káva pro rodiče</span></div>
+        <div class="benefit-item"><b>Příspěvek Jihočeského kraje</b><span class="muted">„Pomáháme s kroužky pro jihočeské děti" (od září)</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Galerie z adminu (vik_gallery, web vfresh), kliknutím se otevře lightbox -->
+  <section class="gallery" id="galerie" aria-label="Fotky a videa">
+    <div class="gallery-strip" id="gallery-strip"></div>
+  </section>
+
+  <section class="section where" id="kontakt">
+    <div class="wrap where-grid">
+      <div class="where-left">
+        <h2 class="display-xl">Kde<br>trénujeme</h2>
+        <span class="muted">Nový sál se zrcadly, dětská herna Safari a restaurace přímo v budově. Už žádné čekání na chodbě.</span>
+      </div>
+      <div class="where-right">
+        <div><b class="lime">📍 Taneční centrum VFRESH DC</b><br>CUT, Vančurova 2904, 390 01 Tábor · přízemí, bývalý Party Room</div>
+        <div><b class="lime">📍 Rekreační STREET děti</b><br>ZŠ Helsinská, Sídliště nad Lužnicí, Tábor</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-line" id="prihlaska">
+    <div class="wrap signup-grid">
+      <div class="signup-left">
+        <h2 class="display-l">Přijď na<br><span class="lime">zkušebku</span></h2>
+        <p class="lead">Napiš nám, o kterou crew máš zájem, a domluvíme první lekci zdarma. Nebo rovnou zavolej.</p>
+        <div class="signup-contacts">
+          <a class="btn btn-lime" href="tel:+420607825318">📞 +420 607 825 318</a>
+          <a class="btn btn-ghost" href="mailto:lena.cimpova@seznam.cz">✉ lena.cimpova@seznam.cz</a>
         </div>
       </div>
 
-      <form class="contact-form" id="contact-form" novalidate>
+      <form class="signup-form" id="contact-form" novalidate>
+        <label for="f-category">Crew</label>
+        <select id="f-category" name="category">
+          <option value="Taneční školička FRESHÍK (3–4 roky)">Taneční školička FRESHÍK (3–4 roky)</option>
+          <option value="VFresh Mini Beat (5–8 let)">VFresh Mini Beat (5–8 let)</option>
+          <option value="DVK Street Dance Crew (8–12 let)">DVK Street Dance Crew (8–12 let)</option>
+          <option value="JVK Street Dance Crew (12–15 let)">JVK Street Dance Crew (12–15 let)</option>
+          <option value="A Fresh Crew (14–20 let)">A Fresh Crew (14–20 let)</option>
+          <option value="Rekreační STREET DANCE (7–14 let)">Rekreační STREET DANCE (7–14 let)</option>
+          <option value="Viktoria Fresh Mates (dospělí 25+)">Viktoria Fresh Mates (dospělí 25+)</option>
+          <option value="Jiné">Jiný dotaz</option>
+        </select>
+
         <label for="f-name">Jméno</label>
         <input id="f-name" name="name" type="text" placeholder="Jméno a příjmení" maxlength="150" required>
 
-        <label for="f-category">Kategorie dotazu</label>
-        <select id="f-category" name="category">
-          <option value="Jiné">Jiné</option>
-        </select>
-
-        <label for="f-email">E-mailová adresa</label>
+        <label for="f-email">E-mail</label>
         <input id="f-email" name="email" type="email" placeholder="vas@email.cz" required>
 
-        <label for="f-message">Vaše zpráva</label>
-        <textarea id="f-message" name="message" rows="4" placeholder="Napište nám pár slov…" maxlength="3000" required></textarea>
+        <label for="f-message">Zpráva</label>
+        <textarea id="f-message" name="message" rows="4" placeholder="Jméno a věk tanečníka, dotaz…" maxlength="3000" required></textarea>
 
-        <label class="form-consent" for="f-consent">
+        <label class="consent" for="f-consent">
           <input id="f-consent" name="consent" type="checkbox" required>
           <span>Souhlasím se zpracováním osobních údajů (jméno, e-mail, zpráva) za účelem vyřízení dotazu.</span>
         </label>
 
-        <button class="btn btn-submit" type="submit">Odeslat</button>
+        <button class="btn btn-lime" type="submit">Odeslat přihlášku →</button>
         <p class="form-note" id="form-note" role="status" aria-live="polite"></p>
       </form>
-      </div>
     </div>
   </section>
 
 </main>
 
-<footer class="site-footer">
+<footer class="footer">
   <div class="wrap footer-inner">
-    <span>VFRESH DC · Viktoria Fresh Dance Center &amp; SK Viktoria z.s. · +420 607 825 318 · lena.cimpova@seznam.cz</span>
-    <span>© 2026 SK Viktoria Tábor</span>
+    <span>VFRESH DC · Viktoria Fresh Dance Center &amp; SK Viktoria z.s.</span>
+    <a href="https://www.viktoria-tabor.cz/" data-vt-site-link="viktoria">Další kroužky SK Viktoria Tábor ↗</a>
+    <span><a href="tel:+420607825318">+420 607 825 318</a> · <a href="mailto:lena.cimpova@seznam.cz">lena.cimpova@seznam.cz</a></span>
   </div>
 </footer>
 
-<script src="js/icons.js"></script>
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Fotka">
+  <button class="lb-btn lb-close" id="lightbox-close" type="button" aria-label="Zavřít">✕</button>
+  <button class="lb-btn lb-prev" id="lightbox-prev" type="button" aria-label="Předchozí">‹</button>
+  <figure class="lb-media" id="lightbox-media"></figure>
+  <button class="lb-btn lb-next" id="lightbox-next" type="button" aria-label="Další">›</button>
+</div>
+
 <script src="js/seed.js"></script>
 <script src="js/store.js"></script>
-<script src="js/script.js"></script>
-<script src="js/render-public.js"></script>
-<script src="js/theme-switcher.js"></script>
+<script src="js/vfresh.js"></script>
 </body>
 </html>
