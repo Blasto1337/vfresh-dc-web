@@ -27,7 +27,7 @@ window.VT_SEED = {
       name: "Zumba & Dance",
       age: "dospělí", location: "Tábor (CUT) & Planá n. L.",
       description: "Taneční fitness pro dospělé: Tábor út večer a st ráno (s hlídáním dětí), Planá po večer.",
-      photo: null, detailHref: "kurz-zumba.html",
+      photo: "assets/aktivity/zumba-1.jpg", detailHref: "kurz-zumba.html",
     },
     {
       id: "street-deti", seed: true, site: "both", group: "vfresh", featured: false,
@@ -46,7 +46,7 @@ window.VT_SEED = {
       name: "Sportovní gymnastika",
       age: "5–15 let", location: "Gymnázium Tábor",
       description: "Od prvních kotoulů po závodní medaile. Středa 15:30–17:30.",
-      photo: null, detailHref: "kurz-gymnastika.html",
+      photo: "assets/aktivity/gymnastika-1.jpg", detailHref: "kurz-gymnastika.html",
     },
     {
       id: "telovychova", seed: true, site: "viktoria", group: "volnocas", featured: true,
@@ -55,7 +55,7 @@ window.VT_SEED = {
       name: "Sportuj s VIKTORKOU",
       age: "3–12 let", location: "CUT Tábor & ZŠ Helsinská",
       description: "Pohybové hry a soutěže (3–7) nebo míčové hry a atletika (4–12). Bez stresu z víkendových zápasů.",
-      photo: null, detailHref: "kurz-telovychova.html",
+      photo: "assets/aktivity/sportuj-1.jpg", detailHref: "kurz-telovychova.html",
     },
     {
       id: "dramaticky-klub", seed: true, site: "viktoria", group: "volnocas", featured: true,
@@ -65,7 +65,7 @@ window.VT_SEED = {
       name: "Dramatický klub",
       age: "3–12 let", location: "CUT Tábor",
       description: "Dramáček (3–6) a Dramalab (7–12): divadelní hra, správná mluva a zdravé sebevědomí.",
-      photo: null, detailHref: "kurz-dramaticky-klub.html",
+      photo: "assets/aktivity/dramaticky-klub-1.jpg", detailHref: "kurz-dramaticky-klub.html",
     },
     {
       id: "viktorianek", seed: true, site: "viktoria", group: "volnocas", featured: true,
@@ -75,7 +75,7 @@ window.VT_SEED = {
       name: "Viktoriánek",
       age: "1,5–3 roky", location: "CUT Tábor",
       description: "Dopolední cvičení rodiče a děti, út a čt 9:30, po cvičení herna Safari.",
-      photo: null, detailHref: "kurz-viktorianek.html",
+      photo: "assets/aktivity/viktorianek-1.jpg", detailHref: "kurz-viktorianek.html",
     },
   ],
 
