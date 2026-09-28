@@ -83,16 +83,16 @@ window.VT_SEED = {
     {
       id: "sportuj-v-parku", seed: true, site: "viktoria", featured: true,
       age: "děti 3–12 let", photoHint: "děti sportují venku v parku",
-      hero: true, heroOrder: 20, heroLead: "Venkovní sportovní odpoledne pro děti: hry, pohyb a ochutnávka kroužku Sportuj s VIKTORKOU pod širým nebem.",
+      hero: true, heroOrder: 20, heroLead: "Venkovní sportovní odpoledne pro děti: hry, pohyb a ochutnávka tréninků Sportuj s VIKTORKOU pod širým nebem.",
       tag: "NÁBOR", color: "red", category: "nabor",
       title: "Sportuj v parku s VIKTORKOU",
       date: "16. 9. 2026", location: "Tábor",
       description: "Venkovní sportovní odpoledne pro děti, hry, pohyb a základy sportů pod širým nebem.",
       bullets: [
         "Venkovní sportovní odpoledne pro děti, hry, pohyb a základy nejrůznějších sportů",
-        "Ochutnávka kroužku Sportuj s VIKTORKOU přímo pod širým nebem",
+        "Ochutnávka pravidelných tréninků Sportuj s VIKTORKOU přímo pod širým nebem",
         "Vhodné oblečení do přírody a sportovní obuv",
-        "Zájemci se mohou přihlásit i rovnou na pravidelný kroužek",
+        "Zájemci se mohou přihlásit i rovnou na pravidelné tréninky",
       ],
       photo: "assets/akce/sportuj-s-viktorkou.jpg",
       detailHref: "akce-sportuj-v-parku.html",
@@ -162,7 +162,7 @@ window.VT_SEED = {
       id: "zkusebni-lekce", seed: true, site: "both",
       title: "Zkušební lekce zdarma celé září",
       date: "do 30. 9. 2026",
-      text: "Zkušební lekce zdarma ve všech kroužcích celé září. Nestihli jste termín? Domluvte si svoji 1 lekci zdarma do konce září.",
+      text: "Zkušební lekce zdarma ve všech aktivitách celé září. Nestihli jste termín? Domluvte si svoji 1 lekci zdarma do konce září.",
       photo: null,
     },
     {
