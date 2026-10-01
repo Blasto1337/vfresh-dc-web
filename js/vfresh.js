@@ -1,7 +1,8 @@
 /*
   VFRESH DC one-page: menu, aktuality a galerie z VTStore, lightbox,
+  karty crew v Rozvrhu z VTStore (kurzy aktivit s kategorií VFRESH DC),
   tlačítka „Přihlásit se" u crew a odeslání přihlášky.
-  Rozvrh, styly, benefity a texty jsou přímo v index.html.
+  Styly, benefity a texty jsou přímo v index.html. Detail kurzu: kurz.html.
 */
 (() => {
   "use strict";
@@ -37,18 +38,32 @@
   // ------------------------------------------- zkušební lekce u crew --
   const form = document.getElementById("contact-form");
   const category = document.getElementById("f-category");
-  document.querySelectorAll(".crew-cta[data-crew]").forEach((btn) => {
-    btn.addEventListener("click", () => {
-      if (category) category.value = btn.dataset.crew;
-      const target = document.getElementById("prihlaska");
-      if (target) target.scrollIntoView({ behavior: "smooth" });
-      if (form) {
-        form.classList.add("is-highlight");
-        setTimeout(() => form.classList.remove("is-highlight"), 1600);
-        const name = document.getElementById("f-name");
-        if (name) setTimeout(() => name.focus({ preventScroll: true }), 500);
-      }
-    });
+  // Předvyplní crew ve formuláři (přidá volbu, kdyby v seznamu chyběla).
+  function selectCrew(label) {
+    if (!category || !label) return;
+    if (![...category.options].some((o) => o.value === label)) {
+      const opt = document.createElement("option");
+      opt.value = label; opt.textContent = label;
+      const other = [...category.options].find((o) => o.value === "Jiné");
+      category.insertBefore(opt, other || null);
+    }
+    category.value = label;
+  }
+  function goToForm(label, smooth) {
+    selectCrew(label);
+    const target = document.getElementById("prihlaska");
+    if (target) target.scrollIntoView({ behavior: smooth ? "smooth" : "auto" });
+    if (form) {
+      form.classList.add("is-highlight");
+      setTimeout(() => form.classList.remove("is-highlight"), 1600);
+      const name = document.getElementById("f-name");
+      if (name) setTimeout(() => name.focus({ preventScroll: true }), 500);
+    }
+  }
+  // Karty crew se vykreslují dynamicky, proto delegace kliknutí.
+  document.addEventListener("click", (e) => {
+    const btn = e.target.closest(".crew-cta[data-crew]");
+    if (btn) goToForm(btn.dataset.crew, true);
   });
 
   // ------------------------------------------------------ přihláška --
@@ -134,8 +149,69 @@
     });
   }
 
+  // ------------------------------------------------- karty crew --
+  const DAY_SHORT = { 1: "Po", 2: "Út", 3: "St", 4: "Čt", 5: "Pá", 6: "So", 7: "Ne" };
+  function crewLabel(g) { return g.ageLabel ? `${g.name} (${g.ageLabel})` : g.name; }
+  function slotLine(slots) {
+    return slots.map((s) => `${DAY_SHORT[s.weekday] || ""} ${s.endTime ? `${s.startTime}–${s.endTime}` : s.startTime}`).join(" · ");
+  }
+  // Místa mimo taneční centrum v CUT (např. ZŠ Helsinská) se píšou na kartu.
+  function otherPlaces(slots) {
+    const names = new Set();
+    slots.forEach((s) => {
+      const p = s.placeId ? VTStore.mista.get(s.placeId) : null;
+      if (p && p.slug !== "cut") names.add(p.shortName || p.name);
+    });
+    return [...names];
+  }
+
+  function renderCrews() {
+    const grid = document.getElementById("crew-grid");
+    const courses = VTStore.coursesOfProgram("vfresh", true);
+    if (!grid || !courses.length) return; // bez dat zůstane záložní obsah z HTML
+    const note = grid.querySelector(".crew-note");
+    grid.innerHTML = courses.map((g, i) => {
+      const slots = VTStore.slotsOf(g.id, true);
+      const info = [
+        slots.length ? slotLine(slots) : "Termín upřesníme",
+        g.trialLesson ? (g.trialNote ? `Zkušební: ${g.trialNote}` : "Zkušební po domluvě") : "",
+        ...otherPlaces(slots).map((p) => `· ${p}`),
+        g.shortDescription ? `· ${g.shortDescription}` : "",
+      ].filter(Boolean);
+      return `
+        <article class="crew">
+          <div class="crew-top"><span class="mono dim">${String(i + 1).padStart(2, "0")}</span>${g.badge ? `<span class="crew-tag">${escapeHtml(g.badge)}</span>` : ""}</div>
+          <h3><a href="${escapeHtml(VTStore.courseHref(g))}">${escapeHtml(g.name)}</a></h3>
+          ${g.ageLabel ? `<span class="crew-age">${escapeHtml(g.ageLabel)}</span>` : ""}
+          <div class="crew-info">${info.map((t) => `<span>${escapeHtml(t)}</span>`).join("")}</div>
+          <div class="crew-actions">
+            <a class="btn btn-outline" href="${escapeHtml(VTStore.courseHref(g))}">Detail →</a>
+            <button class="btn btn-outline crew-cta" type="button" data-crew="${escapeHtml(crewLabel(g))}">Přihlásit se →</button>
+          </div>
+        </article>`;
+    }).join("");
+    if (note) grid.appendChild(note);
+
+    // Nabídka crew ve formuláři podle aktuálních kurzů.
+    if (category) {
+      const current = category.value;
+      category.innerHTML = courses.map((g) => `<option value="${escapeHtml(crewLabel(g))}">${escapeHtml(crewLabel(g))}</option>`).join("")
+        + '<option value="Jiné">Jiný dotaz</option>';
+      if ([...category.options].some((o) => o.value === current)) category.value = current;
+    }
+  }
+
+  // ?crew=… (odkaz z detailu kurzu) předvyplní formulář a sjede k němu.
+  function crewFromUrl() {
+    const crew = new URLSearchParams(window.location.search).get("crew");
+    if (crew) goToForm(crew, false);
+  }
+
   // ------------------------------------------- data z VTStore (admin) --
   function render() {
+    renderCrews();
+    crewFromUrl();
+
     // Aktuality webu vfresh (+ both): úzký pruh pod běžícím pásem.
     const newsSection = document.getElementById("aktuality");
     const newsList = document.getElementById("news-list");

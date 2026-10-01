@@ -27,7 +27,7 @@ window.VT_SEED = {
       name: "Zumba & Dance",
       age: "dospělí", location: "Tábor (CUT) & Planá n. L.",
       description: "Taneční fitness pro dospělé: Tábor út večer a st ráno (s hlídáním dětí), Planá po večer.",
-      photo: "assets/aktivity/zumba-1.jpg", detailHref: "kurz-zumba.html",
+      photo: "assets/aktivity/zumba-1.jpg", slug: "zumba", detailHref: "kurz-zumba.html",
     },
     {
       id: "street-deti", seed: true, site: "both", group: "vfresh", featured: false,
@@ -41,12 +41,12 @@ window.VT_SEED = {
     {
       id: "gymnastika", seed: true, site: "viktoria", group: "volnocas", featured: true,
       when: "St 15:30–17:30", photoHint: "děti při sestavě na kladině nebo akrobacii v tělocvičně Gymnázia",
-      hero: true, heroOrder: 40, heroLead: "Od prvních kotoulů po závodní medaile. Trénujeme obratnost, sílu i odvahu v tělocvičně Gymnázia Tábor.",
+      hero: true, heroOrder: 40, heroLead: "Od prvních kotoulů po soutěžní medaile. Trénujeme obratnost, sílu i odvahu v tělocvičně Gymnázia Tábor.",
       icon: "medal", color: "teal",
       name: "Sportovní gymnastika",
       age: "5–15 let", location: "Gymnázium Tábor",
-      description: "Od prvních kotoulů po závodní medaile. Středa 15:30–17:30.",
-      photo: "assets/aktivity/gymnastika-1.jpg", detailHref: "kurz-gymnastika.html",
+      description: "Od prvních kotoulů po soutěžní medaile. Středa 15:30–17:30.",
+      photo: "assets/aktivity/gymnastika-1.jpg", slug: "gymnastika", detailHref: "kurz-gymnastika.html",
     },
     {
       id: "telovychova", seed: true, site: "viktoria", group: "volnocas", featured: true,
@@ -55,7 +55,7 @@ window.VT_SEED = {
       name: "Sportuj s VIKTORKOU",
       age: "3–12 let", location: "CUT Tábor & ZŠ Helsinská",
       description: "Pohybové hry a soutěže (3–7) nebo míčové hry a atletika (4–12). Bez stresu z víkendových zápasů.",
-      photo: "assets/aktivity/sportuj-1.jpg", detailHref: "kurz-telovychova.html",
+      photo: "assets/aktivity/sportuj-1.jpg", slug: "telovychova", detailHref: "kurz-telovychova.html",
     },
     {
       id: "dramaticky-klub", seed: true, site: "viktoria", group: "volnocas", featured: true,
@@ -65,7 +65,7 @@ window.VT_SEED = {
       name: "Dramatický klub",
       age: "3–12 let", location: "CUT Tábor",
       description: "Dramáček (3–6) a Dramalab (7–12): divadelní hra, správná mluva a zdravé sebevědomí.",
-      photo: "assets/aktivity/dramaticky-klub-1.jpg", detailHref: "kurz-dramaticky-klub.html",
+      photo: "assets/aktivity/dramaticky-klub-1.jpg", slug: "dramaticky-klub", detailHref: "kurz-dramaticky-klub.html",
     },
     {
       id: "viktorianek", seed: true, site: "viktoria", group: "volnocas", featured: true,
@@ -75,7 +75,7 @@ window.VT_SEED = {
       name: "Viktoriánek",
       age: "1,5–3 roky", location: "CUT Tábor",
       description: "Dopolední cvičení rodiče a děti, út a čt 9:30, po cvičení herna Safari.",
-      photo: "assets/aktivity/viktorianek-1.jpg", detailHref: "kurz-viktorianek.html",
+      photo: "assets/aktivity/viktorianek-1.jpg", slug: "viktorianek", detailHref: "kurz-viktorianek.html",
     },
   ],
 
@@ -101,7 +101,7 @@ window.VT_SEED = {
       id: "silvestrovsky-beh", seed: true, site: "viktoria", featured: true,
       age: "děti i dospělí", photoHint: "běžci na startu v zimním Táboře",
       hero: true, heroOrder: 50, heroLead: "Tradiční sportovní rozloučení se starým rokem, pro děti i dospělé, bez ohledu na výkonnost.",
-      tag: "ZÁVOD", color: "teal", category: "zavody",
+      tag: "SOUTĚŽ", color: "teal", category: "zavody",
       title: "Silvestrovský běh",
       date: "30. 12. 2026", location: "Tábor",
       description: "Tradiční sportovní rozloučení se starým rokem, pro děti i dospělé.",

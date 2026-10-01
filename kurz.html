@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="cs" data-site="vfresh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kurz | VFRESH DC Tábor</title>
+<meta name="description" content="Termíny, místo, cena a zkušební lekce tanečního kurzu VFRESH DC v Táboře.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/vfresh.css">
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap nav-inner">
+    <a class="brand" href="index.html">
+      <img src="assets/logo-freshdance.png" alt="" class="brand-logo">
+      <span class="brand-name">VFRESH DC</span>
+    </a>
+    <nav class="nav-links" id="main-nav" aria-label="Hlavní menu">
+      <a href="index.html#styly">Styly</a>
+      <a href="index.html#rozvrh">Rozvrh</a>
+      <a href="index.html#proc">Proč my</a>
+      <a href="index.html#benefity">Benefity</a>
+      <a href="index.html#galerie">Galerie</a>
+      <a href="index.html#kontakt">Kontakt</a>
+      <a class="btn btn-lime nav-cta" href="index.html#prihlaska">Přihláška ✦</a>
+    </nav>
+    <button class="nav-toggle" id="nav-toggle" type="button" aria-expanded="false" aria-controls="main-nav" aria-label="Otevřít menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- Detail kurzu z databáze: kurz.html?k=<slug kurzu> (admin: Kurzy). -->
+<main id="kurz-root">
+  <section class="kurz-hero">
+    <div class="wrap">
+      <a class="kurz-back mono" href="index.html#rozvrh">← Rozvrh</a>
+      <div class="kurz-eyebrow"><span class="mono lime" id="k-activity">VFRESH DC</span><span class="crew-tag" id="k-badge"></span></div>
+      <h1 class="display-xl" id="k-name">Načítáme…</h1>
+      <span class="kurz-age" id="k-age"></span>
+    </div>
+  </section>
+
+  <section class="section kurz-body" id="k-body" hidden>
+    <div class="wrap kurz-grid">
+      <div class="kurz-card">
+        <span class="label">Kdy a kde</span>
+        <div class="kurz-slots" id="k-slots"></div>
+      </div>
+      <div class="kurz-side">
+        <div class="kurz-card" id="k-price-card" hidden>
+          <span class="label">Cena</span>
+          <div class="kurz-prices" id="k-prices"></div>
+          <p class="muted kurz-term" id="k-term" hidden></p>
+        </div>
+        <div class="kurz-trial" id="k-trial" hidden></div>
+        <div class="kurz-desc" id="k-desc" hidden></div>
+        <div class="kurz-cta">
+          <a class="btn btn-lime" id="k-cta" href="index.html#prihlaska">Přihlásit se na zkušebku →</a>
+          <a class="btn btn-ghost" href="tel:+420607825318">📞 +420 607 825 318</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-line" id="k-others" hidden>
+    <div class="wrap">
+      <h2 class="display-m">Další crew</h2>
+      <div class="kurz-others" id="k-others-list"></div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="wrap footer-inner">
+    <span>VFRESH DC · Viktoria Fresh Dance Center &amp; SK Viktoria z.s.</span>
+    <a href="https://www.viktoria-tabor.cz/" data-vt-site-link="viktoria">Další kroužky SK Viktoria Tábor ↗</a>
+    <span><a href="tel:+420607825318">+420 607 825 318</a> · <a href="mailto:lena.cimpova@seznam.cz">lena.cimpova@seznam.cz</a></span>
+  </div>
+</footer>
+
+<script src="js/seed.js"></script>
+<script src="js/store.js"></script>
+<script src="js/vfresh.js"></script>
+<script src="js/kurz.js"></script>
+</body>
+</html>
