@@ -1,0 +1,4 @@
+# config.php obsahuje heslo k poště, zvenku nepřístupný
+<Files "config.php">
+  Require all denied
+</Files>

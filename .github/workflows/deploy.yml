@@ -10,6 +10,31 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: Konfigurace e-mailu z formuláře
+        env:
+          SMTP_PASSWORD: ${{ secrets.SMTP_PASSWORD }}
+          MAIL_TO: ${{ vars.MAIL_TO || 'info@vfresh.cz' }}
+        run: |
+          if [ -z "$SMTP_PASSWORD" ]; then
+            echo "::warning::Chybí secret SMTP_PASSWORD, formulář nebude posílat e-maily."
+            exit 0
+          fi
+          php -r '
+            $to = array_values(array_filter(array_map("trim", explode(",", getenv("MAIL_TO")))));
+            $cfg = [
+              "site"      => "vfresh.cz",
+              "admin_url" => "https://viktoria-tabor.cz/admin/",
+              "origins"   => ["https://vfresh.cz", "https://www.vfresh.cz"],
+              "from"      => "info@vfresh.cz",
+              "from_name" => "Web VFRESH DC",
+              "to"        => $to,
+              "smtp"      => ["host" => "smtp.seznam.cz", "port" => 465, "secure" => "ssl",
+                              "user" => "info@vfresh.cz", "pass" => getenv("SMTP_PASSWORD")],
+            ];
+            file_put_contents("api/config.php", "<?php\nreturn " . var_export($cfg, true) . ";\n");
+          '
+          echo "api/config.php vytvořen (příjemci: $MAIL_TO)"
+
       - name: Nahrání přes FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
@@ -26,3 +51,4 @@ jobs:
             podklady/**
             CLAUDE.md
             README.md
+            api/config.example.php

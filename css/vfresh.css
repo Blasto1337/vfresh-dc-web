@@ -178,6 +178,8 @@ button{font:inherit}
 .signup-form select option{background:var(--bg)}
 .signup-form input::placeholder,.signup-form textarea::placeholder{color:rgba(241,240,236,.35)}
 .signup-form input:focus,.signup-form select:focus,.signup-form textarea:focus{outline:none;border-color:var(--lime)}
+.field-optional{font-weight:400;text-transform:none;letter-spacing:0;opacity:.7}
+.hp-field{position:absolute;left:-10000px;width:1px;height:1px;overflow:hidden}
 .signup-form .consent{display:flex;gap:10px;align-items:flex-start;text-transform:none;letter-spacing:0;font-size:13px;font-weight:500;color:var(--muted);line-height:1.45}
 .signup-form .consent input{width:auto;flex:none;margin-top:2px;accent-color:var(--lime)}
 .signup-form .btn{margin-top:8px;align-self:flex-start}

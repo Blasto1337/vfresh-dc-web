@@ -68,12 +68,31 @@
 
   // ------------------------------------------------------ přihláška --
   const note = document.getElementById("form-note");
+  const pageLoadedAt = Date.now();
+
+  // Odeslání e-mailu klubu přes api/prihlaska.php (SMTP Seznam Email Profi).
+  async function sendMail(payload) {
+    try {
+      const res = await fetch("/api/prihlaska.php", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+      const data = await res.json().catch(() => ({}));
+      return res.ok && data.ok === true;
+    } catch (e) {
+      console.warn("E-mail s přihláškou se nepodařilo odeslat.", e);
+      return false;
+    }
+  }
+
   if (form && note) {
     form.addEventListener("submit", async (event) => {
       event.preventDefault();
       const name = form.name.value.trim();
       const cat = form.category.value;
       const email = form.email.value.trim();
+      const phone = form.phone ? form.phone.value.trim() : "";
       const message = form.message.value.trim();
       const consent = !!(form.consent && form.consent.checked);
 
@@ -88,33 +107,46 @@
         return;
       }
 
+      // Skryté pole vyplní jen robot: tváříme se, že je odesláno.
+      const website = form.website ? form.website.value.trim() : "";
+      const elapsed = Date.now() - pageLoadedAt;
+      if (website || elapsed < 2500) {
+        note.textContent = "Díky, přihláška dorazila. Ozveme se co nejdřív!";
+        note.style.color = "var(--lime)";
+        form.reset();
+        return;
+      }
+
       const submitBtn = form.querySelector('button[type="submit"]');
       if (submitBtn) submitBtn.disabled = true;
+      note.textContent = "Odesíláme…";
+      note.style.color = "var(--lime)";
 
-      // Přihláška se uloží do databáze (označená webem vfresh). Když se to
-      // nepovede, otevře se e-mail, aby o dotaz nikdo nepřišel.
+      // Přihláška se uloží do databáze (označená webem vfresh) a zároveň
+      // odejde e-mailem.
       let saved = false;
       if (window.VTStore) {
         try {
-          await VTStore.submissions.add({ name, email, category: cat, message, status: "new", consent: true });
+          await VTStore.submissions.add({ name, email, phone: phone || null, category: cat, message, status: "new", consent: true });
           saved = true;
         } catch (e) {
           console.warn("Přihlášku se nepodařilo uložit do databáze.", e);
         }
       }
+      const mailed = await sendMail({ name, email, phone, category: cat, message, consent: true, saved, website, elapsed });
 
       if (submitBtn) submitBtn.disabled = false;
-      if (saved) {
+      if (saved || mailed) {
         note.textContent = "Díky, přihláška dorazila. Ozveme se co nejdřív!";
         note.style.color = "var(--lime)";
         form.reset();
         return;
       }
       const subject = encodeURIComponent(`Přihláška z webu VFRESH DC: ${cat}`);
-      const body = encodeURIComponent(`Jméno: ${name}\nCrew: ${cat}\nE-mail: ${email}\n\n${message}`);
-      note.textContent = "Přihlášku se nepodařilo uložit, otevírá se e-mail s vyplněnou zprávou…";
-      note.style.color = "var(--lime)";
-      window.location.href = `mailto:lena.cimpova@seznam.cz?subject=${subject}&body=${body}`;
+      const body = encodeURIComponent(`Jméno: ${name}\nCrew: ${cat}\nE-mail: ${email}\nTelefon: ${phone}\n\n${message}`);
+      note.textContent = "Přihlášku se nepodařilo odeslat, otevírá se e-mail s vyplněnou zprávou…";
+      note.style.color = "#ff6b5b";
+      window.location.href = `mailto:info@vfresh.cz?subject=${subject}&body=${body}`;
     });
   }
 

@@ -257,7 +257,7 @@
       table: "vik_inquiries",
       adminOnlyRead: true,
       fields: {
-        name: "name", email: "email", category: "category", message: "message",
+        name: "name", email: "email", phone: "phone", category: "category", message: "message",
         status: "status", consent: "consent_gdpr", site: "site",
       },
     },

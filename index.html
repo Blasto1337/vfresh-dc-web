@@ -237,12 +237,19 @@
         <label for="f-email">E-mail</label>
         <input id="f-email" name="email" type="email" placeholder="vas@email.cz" required>
 
+        <label for="f-phone">Telefon <span class="field-optional">(nepovinné)</span></label>
+        <input id="f-phone" name="phone" type="tel" placeholder="+420 123 456 789" maxlength="40" autocomplete="tel">
+
         <label for="f-message">Zpráva</label>
         <textarea id="f-message" name="message" rows="4" placeholder="Jméno a věk tanečníka, dotaz…" maxlength="3000" required></textarea>
 
+        <div class="hp-field" aria-hidden="true">
+          <label for="f-website">Nevyplňujte</label>
+          <input id="f-website" name="website" type="text" tabindex="-1" autocomplete="off">
+        </div>
         <label class="consent" for="f-consent">
           <input id="f-consent" name="consent" type="checkbox" required>
-          <span>Souhlasím se zpracováním osobních údajů (jméno, e-mail, zpráva) za účelem vyřízení dotazu.</span>
+          <span>Souhlasím se zpracováním osobních údajů (jméno, e-mail, telefon, zpráva) za účelem vyřízení dotazu.</span>
         </label>
 
         <button class="btn btn-lime" type="submit">Odeslat přihlášku →</button>
