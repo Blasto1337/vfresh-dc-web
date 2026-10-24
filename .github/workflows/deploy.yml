@@ -28,6 +28,7 @@ jobs:
               "from"      => "info@vfresh.cz",
               "from_name" => "Web VFRESH DC",
               "to"        => $to,
+              "transport" => "mail",
               "smtp"      => ["host" => "smtp.seznam.cz", "port" => 465, "secure" => "ssl",
                               "user" => "info@vfresh.cz", "pass" => getenv("SMTP_PASSWORD")],
             ];

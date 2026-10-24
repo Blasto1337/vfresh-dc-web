@@ -8,6 +8,7 @@ return [
     'from'      => 'info@vfresh.cz',
     'from_name' => 'Web VFRESH DC',
     'to'        => ['info@vfresh.cz'],
+    'transport' => 'mail',         // mail (PHP mail() hostingu) | smtp
     'smtp'      => [
         'host'   => 'smtp.seznam.cz',
         'port'   => 465,

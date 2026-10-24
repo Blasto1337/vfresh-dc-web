@@ -1,6 +1,11 @@
 <?php
 /**
- * Přihláška z webového formuláře -> e-mail přes SMTP (Seznam Email Profi).
+ * Přihláška z webového formuláře -> e-mail do schránky info@ (Seznam Email Profi).
+ *
+ * Odesílá se přes PHP mail() serveru hostingu (SvětHostingu blokuje odchozí
+ * SMTP porty 25/465/587). Doména proto musí mít v SPF
+ * "include:_spf.svethostingu.cz". SMTP klient níže zůstává pro případ, že by
+ * porty byly odblokované ('transport' => 'smtp' v configu).
  *
  * Volá ho JS formuláře (POST, JSON) hned po uložení přihlášky do Supabase.
  * Přihlašovací údaje k SMTP jsou v api/config.php, který není v gitu:
@@ -147,9 +152,18 @@ $headers = [
 $data = implode("\r\n", $headers) . "\r\n\r\n" . rtrim(chunk_split(base64_encode($body), 76, "\r\n"));
 
 try {
-    smtp_send($cfg['smtp'], $from, $to, $data, $fromDomain);
+    if (($cfg['transport'] ?? 'mail') === 'smtp') {
+        smtp_send($cfg['smtp'], $from, $to, $data, $fromDomain);
+    } else {
+        // mail() si To a Subject přidá sám, zbytek hlaviček předáme.
+        $extra = array_values(array_filter($headers, static fn($h) => !preg_match('/^(To|Subject):/i', $h)));
+        $body64 = rtrim(chunk_split(base64_encode($body), 76, "\r\n"));
+        if (!mail(implode(', ', $to), mime_header($subject), $body64, implode("\r\n", $extra), '-f' . $from)) {
+            throw new RuntimeException('mail() vrátilo false');
+        }
+    }
 } catch (Throwable $e) {
-    error_log('prihlaska.php: SMTP chyba: ' . $e->getMessage());
+    error_log('prihlaska.php: chyba odeslání: ' . $e->getMessage());
     respond(502, ['ok' => false, 'error' => 'mail']);
 }
 
